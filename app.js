@@ -7,37 +7,6 @@ let imageDelete = document.querySelector(".delete-li");
 let imageSort = document.querySelector(".sortImage");
 let appInput = document.querySelector(".app__input");
 
-//Sort fuctionality
-imageSort.addEventListener("mouseover", (event) => {
-  event.target.src = "./Images/down.svg";
-});
-imageSort.addEventListener("mouseleave", (event) => {
-  event.target.src = "./Images/downCL.svg";
-});
-
-let flag = true;
-imageSort.addEventListener("click", (e) => {
-  if (flag == true) {
-    imageSort.src = "./Images/top.svg";
-    imageSort.addEventListener("mouseleave", (event) => {
-      event.target.src = "./Images/topCL.svg";
-    });
-    imageSort.addEventListener("mouseover", (event) => {
-      event.target.src = "./Images/top.svg";
-    });
-    flag = !flag;
-  } else {
-    imageSort.src = "./Images/down.svg";
-    imageSort.addEventListener("mouseleave", (event) => {
-      event.target.src = "./Images/downCL.svg";
-    });
-    imageSort.addEventListener("mouseover", (event) => {
-      event.target.src = "./Images/down.svg";
-    });
-    flag = !flag;
-  }
-});
-
 // Function to display tasks
 function displayTasks() {
   if (tasks.length > 0) {
@@ -111,6 +80,14 @@ function removeTask(task) {
   }
 }
 
+//Sort fuctionality
+imageSort.addEventListener("mouseover", (event) => {
+  event.target.src = "./Images/down.svg";
+});
+imageSort.addEventListener("mouseleave", (event) => {
+  event.target.src = "./Images/downCL.svg";
+});
+
 function toggleSortOrder() {
   if (ascendingSort) {
     tasks.sort();
@@ -120,6 +97,29 @@ function toggleSortOrder() {
   ascendingSort = !ascendingSort;
   displayTasks();
 }
+
+let flag = true;
+imageSort.addEventListener("click", (e) => {
+  if (flag == true) {
+    imageSort.src = "./Images/top.svg";
+    imageSort.addEventListener("mouseleave", (event) => {
+      event.target.src = "./Images/topCL.svg";
+    });
+    imageSort.addEventListener("mouseover", (event) => {
+      event.target.src = "./Images/top.svg";
+    });
+    flag = !flag;
+  } else {
+    imageSort.src = "./Images/down.svg";
+    imageSort.addEventListener("mouseleave", (event) => {
+      event.target.src = "./Images/downCL.svg";
+    });
+    imageSort.addEventListener("mouseover", (event) => {
+      event.target.src = "./Images/down.svg";
+    });
+    flag = !flag;
+  }
+});
 
 //display of tasks
 displayTasks();
