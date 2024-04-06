@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="./style.css" />
+    <script defer src="app.js"></script>
+    <title>Todo-list</title>
+  </head>
+  <body>
+    <div id="todo-list">
+      <div class="main">
+        <p class="tittleYellow"></p>
+        <h1 class="header">To-do list</h1>
+        <img
+          onclick="toggleSortOrder()"
+          class="sortImage"
+          src="./Images/downCL.svg"
+          alt="sorted Image"
+        />
+        <img
+          onclick="toggleSortOrder()"
+          class="sortImage hidden"
+          src="./Images/down.svg"
+          alt="hidden image"
+        />
+        <div class="task-list-container">
+          <ol id="tasks"></ol>
+        </div>
+        <div class="app__input">
+          <img class="delete-li" src="./Images/xCL.svg" alt="delete li image" />
+          <img
+            class="delete-li hidden"
+            src="./Images/x.svg"
+            alt="delete li image"
+          />
+          <input type="text" id="task" placeholder="Add new task" />
+        </div>
+        <img src="./Images/add.svg" id="addTask" alt="add Image" />
+      </div>
+    </div>
+  </body>
+</html>
